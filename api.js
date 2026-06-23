@@ -1,52 +1,36 @@
-const API_BASE = "https://open.api.nexon.com/mabinogi/v1";
+const API_URL = "https://open.api.nexon.com/mabinogi/v1";
 
-/**
- * 공통 API 호출
- */
-async function api(url) {
+async function request(url){
 
-    const res = await fetch(API_BASE + url, {
-        headers: {
-            "x-nxopen-api-key": API_KEY
+    const res = await fetch(API_URL + url,{
+
+        headers:{
+            "x-nxopen-api-key":API_KEY
         }
+
     });
 
-    if (!res.ok) {
-        throw new Error(`API ERROR : ${res.status}`);
+    if(!res.ok){
+
+        throw new Error(await res.text());
+
     }
 
     return await res.json();
-}
-
-/**
- * 아이템 이름 검색
- */
-async function searchItem(keyword) {
-
-    return await api(
-        `/auction/keyword-search?keyword=${encodeURIComponent(keyword)}`
-    );
 
 }
 
-/**
- * 경매장 등록 목록 조회
- */
-async function auctionList(itemId) {
+async function getAuctionList(category,itemName,cursor=""){
 
-    return await api(
-        `/auction/list?item_id=${itemId}`
-    );
+    let url=
+    `/auction/list?auction_item_category=${encodeURIComponent(category)}&item_name=${encodeURIComponent(itemName)}`;
 
-}
+    if(cursor){
 
-/**
- * 거래 내역 조회
- */
-async function history(itemId) {
+        url+=`&cursor=${cursor}`;
 
-    return await api(
-        `/auction/history?item_id=${itemId}`
-    );
+    }
+
+    return await request(url);
 
 }
