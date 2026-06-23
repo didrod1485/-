@@ -1,1 +1,14 @@
-
+[
+  {
+    "name":"힐웬 합금",
+    "cost":0,
+    "sellPrice":0,
+    "materials":[]
+  },
+  {
+    "name":"켈틱 체인 블레이드",
+    "cost":0,
+    "sellPrice":0,
+    "materials":[]
+  }
+]
