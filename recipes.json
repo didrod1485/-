@@ -1,14 +1,16 @@
 [
   {
-    "name":"힐웬 합금",
-    "cost":0,
-    "sellPrice":0,
-    "materials":[]
+    "name": "힐웬 합금",
+    "category": "기타 재료",
+    "cost": 0,
+    "sellPrice": 0,
+    "materials": []
   },
   {
-    "name":"켈틱 체인 블레이드",
-    "cost":0,
-    "sellPrice":0,
-    "materials":[]
+    "name": "켈틱 체인 블레이드",
+    "category": "체인 블레이드",
+    "cost": 0,
+    "sellPrice": 0,
+    "materials": []
   }
 ]
