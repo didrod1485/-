@@ -1,1 +1,7 @@
 const API_KEY = "test_96b84386a37d5587e281e9a5824c7422184565d6327e1578d00152d85125b824efe8d04e6d233bd35cf2fabdeb93fb0d";
+
+const TAX = 0.05;
+
+const API = {
+    BASE: "https://open.api.nexon.com/mabinogi"
+};
